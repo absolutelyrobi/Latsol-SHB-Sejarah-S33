@@ -1,0 +1,1730 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Latihan Soal Sejarah</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper: #F5F2EA;
+  --paper-line: #DCD6C6;
+  --ink: #1E2A38;
+  --ink-soft: #4A5568;
+  --rule: #C9BFA5;
+  --card: #FFFFFF;
+  --accent: #2F6F5E;
+  --accent-dark: #234F42;
+  --amber: #B5762A;
+  --wrong: #A6403A;
+  --wrong-bg: #FBEDEC;
+  --right-bg: #EAF3EE;
+  --shadow: 0 1px 0 rgba(30,42,56,0.06);
+}
+:root:not([data-theme="light"]){
+  @media (prefers-color-scheme: dark){
+    --paper: #171A17;
+    --paper-line: #2B2F29;
+    --ink: #EDEAE0;
+    --ink-soft: #B7B3A5;
+    --rule: #3A3F37;
+    --card: #1E211D;
+    --accent: #6FAF9A;
+    --accent-dark: #8FC7B4;
+    --amber: #D89A55;
+    --wrong: #E28A82;
+    --wrong-bg: #2B1E1D;
+    --right-bg: #1D2A22;
+  }
+}
+:root[data-theme="dark"]{
+  --paper: #171A17;
+  --paper-line: #2B2F29;
+  --ink: #EDEAE0;
+  --ink-soft: #B7B3A5;
+  --rule: #3A3F37;
+  --card: #1E211D;
+  --accent: #6FAF9A;
+  --accent-dark: #8FC7B4;
+  --amber: #D89A55;
+  --wrong: #E28A82;
+  --wrong-bg: #2B1E1D;
+  --right-bg: #1D2A22;
+}
+
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;}
+body{
+  background: repeating-linear-gradient(var(--paper) 0px, var(--paper) 34px, var(--paper-line) 35px);
+  background-color:var(--paper);
+  color:var(--ink);
+  font-family:'Inter',sans-serif;
+  min-height:100vh;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{
+  max-width:760px;
+  margin:0 auto;
+  padding:28px 20px 80px;
+}
+.masthead{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-end;
+  border-bottom:2px solid var(--ink);
+  padding-bottom:14px;
+  margin-bottom:22px;
+  gap:16px;
+  flex-wrap:wrap;
+}
+.masthead h1{
+  font-family:'Source Serif 4',serif;
+  font-size:1.5rem;
+  font-weight:700;
+  margin:0 0 4px;
+  line-height:1.15;
+}
+.masthead p{
+  margin:0;
+  color:var(--ink-soft);
+  font-size:0.88rem;
+}
+.progress-box{
+  text-align:right;
+  font-family:'IBM Plex Mono',monospace;
+  font-size:0.82rem;
+  color:var(--ink-soft);
+  line-height:1.5;
+}
+.progress-box strong{color:var(--ink);font-size:1.05rem;}
+
+.progress-track{
+  height:6px;
+  background:var(--paper-line);
+  border-radius:3px;
+  margin-bottom:26px;
+  overflow:hidden;
+}
+.progress-fill{
+  height:100%;
+  background:var(--accent);
+  width:0%;
+  transition:width .35s ease;
+}
+
+.card{
+  background:var(--card);
+  border:1px solid var(--rule);
+  border-radius:3px;
+  box-shadow:var(--shadow);
+  padding:26px 26px 22px;
+  margin-bottom:18px;
+}
+
+.text-slate{
+  border-left:3px solid var(--amber);
+  padding:14px 18px;
+  margin-bottom:20px;
+  background:rgba(181,118,42,0.06);
+  border-radius:0 3px 3px 0;
+}
+.text-slate h3{
+  font-family:'Source Serif 4',serif;
+  font-size:1.05rem;
+  margin:0 0 8px;
+  font-weight:600;
+}
+.text-slate pre{
+  font-family:'Source Serif 4',serif;
+  font-size:0.96rem;
+  line-height:1.65;
+  white-space:pre-wrap;
+  margin:0;
+  color:var(--ink);
+}
+
+.q-meta{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:0.75rem;
+  color:var(--ink-soft);
+  margin-bottom:10px;
+  letter-spacing:0.02em;
+}
+.q-text{
+  font-family:'Source Serif 4',serif;
+  font-size:1.18rem;
+  line-height:1.5;
+  margin:0 0 20px;
+  font-weight:500;
+}
+
+.options{ display:flex; flex-direction:column; gap:10px; margin-bottom:6px; }
+.opt{
+  display:flex; align-items:flex-start; gap:12px; padding:12px 14px;
+  border:1.5px solid var(--rule); border-radius:3px; cursor:pointer;
+  background:transparent; text-align:left; font-family:'Inter',sans-serif;
+  font-size:0.98rem; color:var(--ink); transition:border-color .15s ease, background .15s ease;
+}
+.opt:hover:not(:disabled){ border-color:var(--accent); background:rgba(47,111,94,0.05); }
+.opt:disabled{cursor:default;}
+.opt .letter{
+  font-family:'IBM Plex Mono',monospace; font-weight:600; font-size:0.85rem;
+  width:22px; height:22px; border:1.5px solid var(--rule); border-radius:50%;
+  display:flex; align-items:center; justify-content:center; flex-shrink:0; margin-top:1px;
+}
+.opt.correct{ border-color:var(--accent); background:var(--right-bg); }
+.opt.correct .letter{border-color:var(--accent);background:var(--accent);color:#fff;}
+.opt.wrong{ border-color:var(--wrong); background:var(--wrong-bg); }
+.opt.wrong .letter{border-color:var(--wrong);background:var(--wrong);color:#fff;}
+
+.hint-box{ font-size:0.88rem; color:var(--amber); border:1px dashed var(--amber); border-radius:3px; padding:9px 12px; margin-top:12px; background:rgba(181,118,42,0.06); }
+.toolbar{ display:flex; gap:8px; margin-top:16px; flex-wrap:wrap; }
+.btn{ font-family:'Inter',sans-serif; font-size:0.82rem; font-weight:600; padding:8px 14px; border-radius:3px; border:1.5px solid var(--rule); background:transparent; color:var(--ink-soft); cursor:pointer; transition:all .15s ease; }
+.btn:hover{border-color:var(--ink);color:var(--ink);}
+.btn-primary{ background:var(--accent); border-color:var(--accent); color:#fff; }
+.btn-primary:hover{background:var(--accent-dark);border-color:var(--accent-dark);color:#fff;}
+
+.feedback{ margin-top:18px; padding-top:16px; border-top:1px solid var(--rule); }
+.feedback-verdict{ display:inline-flex; align-items:center; gap:8px; font-family:'IBM Plex Mono',monospace; font-weight:600; font-size:0.85rem; padding:4px 10px; border-radius:20px; margin-bottom:12px; }
+.feedback-verdict.correct{background:var(--right-bg);color:var(--accent-dark);}
+.feedback-verdict.wrong{background:var(--wrong-bg);color:var(--wrong);}
+.feedback p{ font-size:0.94rem; line-height:1.6; color:var(--ink); margin:0 0 10px; }
+.feedback .label{ font-family:'IBM Plex Mono',monospace; font-size:0.72rem; color:var(--ink-soft); text-transform:uppercase; letter-spacing:0.04em; margin-bottom:4px; display:block; }
+.score-line{ font-family:'IBM Plex Mono',monospace; font-size:0.82rem; color:var(--ink-soft); margin-top:14px; }
+.next-row{ margin-top:18px; display:flex; justify-content:flex-end; }
+
+/* Custom Modal replacing alert() */
+.modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.4); z-index: 999; display: none; align-items: center; justify-content: center; backdrop-filter: blur(2px); }
+.modal-box { background: var(--card); padding: 24px; border-radius: 6px; max-width: 320px; width: 90%; text-align: center; border: 1px solid var(--rule); box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+.modal-box h3 { margin: 0 0 12px; font-family: 'Source Serif 4', serif; font-size: 1.2rem; }
+.modal-box p { color: var(--ink-soft); font-size: 0.95rem; line-height: 1.5; margin-bottom: 20px; }
+
+.start-hero{ text-align:left; }
+.start-hero h2{ font-family:'Source Serif 4',serif; font-size:1.7rem; margin:0 0 10px; line-height:1.25; }
+.start-hero p{ color:var(--ink-soft); line-height:1.6; font-size:0.98rem; margin:0 0 14px; }
+.chips{ display:flex; gap:8px; flex-wrap:wrap; margin:16px 0 20px; }
+.chip{ font-family:'IBM Plex Mono',monospace; font-size:0.76rem; padding:5px 10px; border:1px solid var(--rule); border-radius:20px; color:var(--ink-soft); }
+
+.result-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin:18px 0 22px; }
+.result-stat{ border:1px solid var(--rule); border-radius:3px; padding:14px 10px; text-align:center; }
+.result-stat .num{ font-family:'Source Serif 4',serif; font-size:1.6rem; font-weight:700; display:block; }
+.result-stat .lbl{ font-family:'IBM Plex Mono',monospace; font-size:0.7rem; color:var(--ink-soft); text-transform:uppercase; }
+.wrong-list{ border:1px solid var(--rule); border-radius:3px; overflow:hidden; margin-bottom:20px; }
+.wrong-item{ padding:14px 16px; border-bottom:1px solid var(--rule); }
+.wrong-item:last-child{border-bottom:none;}
+.wrong-item .wi-head{ font-family:'IBM Plex Mono',monospace; font-size:0.75rem; color:var(--wrong); margin-bottom:6px; }
+.wrong-item p{margin:0 0 6px;font-size:0.92rem;line-height:1.55;}
+.eval-block{ border:1px solid var(--rule); border-radius:3px; padding:16px 18px; margin-bottom:14px; }
+.eval-block h4{ font-family:'Source Serif 4',serif; font-size:1.02rem; margin:0 0 8px; }
+.eval-block ul{margin:0;padding-left:20px;}
+.eval-block li{font-size:0.92rem;line-height:1.6;margin-bottom:4px;}
+.eval-empty{color:var(--ink-soft);font-style:italic;font-size:0.9rem;}
+
+footer.credit{ text-align:center; color:var(--ink-soft); font-size:0.78rem; margin-top:30px; margin-bottom:10px; font-family:'IBM Plex Mono',monospace; }
+
+@media (max-width:520px){
+  .result-grid{grid-template-columns:repeat(3,1fr);gap:8px;}
+  .card{padding:20px 16px;}
+  .masthead{align-items:flex-start;}
+  .progress-box{text-align:left;}
+}
+</style>
+</head>
+<body>
+<div class="wrap" id="app"></div>
+
+<!-- Modal Structure -->
+<div id="custom-modal" class="modal-overlay">
+  <div class="modal-box">
+    <h3>Informasi Latihan</h3>
+    <p id="modal-msg"></p>
+    <button class="btn btn-primary" onclick="document.getElementById('custom-modal').style.display='none'">Tutup</button>
+  </div>
+</div>
+
+<script id="quiz-data" type="application/json">
+{
+  "TEXTS": {
+    "t_kedatangan": {"title": "Masa Penjelajahan Samudra", "body": "Latar belakang kedatangan bangsa-bangsa Eropa ke perairan Nusantara dan penemuan rute baru."},
+    "t_kolonial": {"title": "Era Kolonialisme & Imperialisme", "body": "Dinamika kebijakan ekonomi dan pemerintahan pada masa penjajahan VOC hingga Hindia Belanda."},
+    "t_perlawanan": {"title": "Perlawanan Daerah", "body": "Perjuangan bersenjata berbagai daerah di Nusantara untuk mengusir penjajahan asing."},
+    "t_dampak": {"title": "Dampak Penjajahan", "body": "Perubahan struktur sosial, ekonomi, politik, dan hukum akibat sistem kolonial."}
+  },
+  "QUESTIONS": [
+    {
+      "cat": "kedatangan", "concept": "Latar Belakang", "text": "t_kedatangan",
+      "q": "Dampak jatuhnya Konstantinopel ke tangan Turki Utsmani (1453) bagi bangsa Eropa adalah....",
+      "opts": { 
+        "A": "Munculnya dominasi Eropa di kawasan Timur Tengah", 
+        "B": "Terputusnya jalur perdagangan rempah-rempah ke Eropa", 
+        "C": "Beralihnya rute pelayaran niaga melalui jalur darat", 
+        "D": "Menurunnya perkembangan ilmu pengetahuan di Eropa", 
+        "E": "Berlakunya kerja sama perdagangan antara Eropa dan Turki" 
+      },
+      "correct": "B", "expl": "Jatuhnya Konstantinopel menutup akses Eropa ke Asia, memaksa mereka mencari rute laut langsung."
+    },
+    {
+      "cat": "kedatangan", "concept": "Semboyan 3G", "text": "t_kedatangan",
+      "q": "Semboyan \"Glory\" yang menjadi pendorong penjelajahan samudra bangsa Eropa memiliki makna....",
+      "opts": { 
+        "A": "Menyebarkan ajaran agama Kristen", 
+        "B": "Mengumpulkan logam mulia dan kekayaan", 
+        "C": "Menemukan jalur perdagangan alternatif", 
+        "D": "Mencari kejayaan dan memperluas kekuasaan", 
+        "E": "Menguasai daerah penghasil rempah-rempah" 
+      },
+      "correct": "D", "expl": "Glory berarti kejayaan, yaitu dorongan untuk menaklukkan wilayah baru demi kebesaran negaranya."
+    },
+    {
+      "cat": "kedatangan", "concept": "Teknologi Navigasi", "text": "t_kedatangan",
+      "q": "Penemuan teknologi yang sangat krusial bagi pelaut Eropa dalam menentukan arah pelayaran adalah....",
+      "opts": { 
+        "A": "Kompas", 
+        "B": "Teleskop", 
+        "C": "Mesin uap", 
+        "D": "Kincir angin", 
+        "E": "Astrolab" 
+      },
+      "correct": "A", "expl": "Kompas memungkinkan pelaut menentukan arah mata angin di lautan terbuka tanpa bergantung pada bintang."
+    },
+    {
+      "cat": "kedatangan", "concept": "Pelopor Penjelajahan", "text": "t_kedatangan",
+      "q": "Dua bangsa Eropa yang menjadi pelopor utama dalam penjelajahan samudra adalah....",
+      "opts": { 
+        "A": "Inggris dan Prancis", 
+        "B": "Belanda dan Inggris", 
+        "C": "Spanyol dan Belanda", 
+        "D": "Prancis dan Portugis", 
+        "E": "Portugis dan Spanyol" 
+      },
+      "correct": "E", "expl": "Portugis dan Spanyol menjadi perintis penjelajahan samudra berkat dukungan penuh kerajaannya."
+    },
+    {
+      "cat": "kedatangan", "concept": "Perjanjian Tordesillas", "text": "t_kedatangan",
+      "q": "Perjanjian yang membagi wilayah penjelajahan dunia antara Spanyol dan Portugis pada tahun 1494 adalah....",
+      "opts": { 
+        "A": "Perjanjian Saragosa", 
+        "B": "Konvensi London", 
+        "C": "Perjanjian Tordesillas", 
+        "D": "Perjanjian Bongaya", 
+        "E": "Kapitulasi Tuntang" 
+      },
+      "correct": "C", "expl": "Perjanjian Tordesillas membagi bumi menjadi dua wilayah, barat untuk Spanyol dan timur untuk Portugis."
+    },
+    {
+      "cat": "kedatangan", "concept": "Penaklukan Malaka", "text": "t_kedatangan",
+      "q": "Tokoh penjelajah dari Portugis yang berhasil menaklukkan pelabuhan Malaka pada tahun 1511 adalah....",
+      "opts": { 
+        "A": "Alfonso de Albuquerque", 
+        "B": "Vasco da Gama", 
+        "C": "Bartolomeu Dias", 
+        "D": "Ferdinand Magelhaens", 
+        "E": "Sebastian del Cano" 
+      },
+      "correct": "A", "expl": "Alfonso memimpin armada militer Portugis untuk merebut Malaka sebagai pusat rempah."
+    },
+    {
+      "cat": "kedatangan", "concept": "Tujuan Eropa", "text": "t_kedatangan",
+      "q": "Tujuan utama kedatangan bangsa-bangsa Eropa ke wilayah Nusantara pada awalnya adalah....",
+      "opts": { 
+        "A": "Mencari daerah jajahan untuk permukiman baru", 
+        "B": "Membangun pangkalan militer angkatan laut", 
+        "C": "Menyebarkan pengaruh kebudayaan Barat", 
+        "D": "Mencari pasar untuk memasarkan hasil industri", 
+        "E": "Memonopoli aktivitas perdagangan rempah-rempah" 
+      },
+      "correct": "E", "expl": "Motif utama bangsa Eropa datang ke Nusantara adalah mendapatkan akses langsung ke sumber rempah-rempah."
+    },
+    {
+      "cat": "kedatangan", "concept": "Pusat Rempah", "text": "t_kedatangan",
+      "q": "Pusat transit perdagangan rempah internasional di Nusantara sebelum dikuasai Portugis adalah....",
+      "opts": { 
+        "A": "Pelabuhan Banten", 
+        "B": "Pelabuhan Sunda Kelapa", 
+        "C": "Pelabuhan Malaka", 
+        "D": "Bandar Niaga Makassar", 
+        "E": "Bandar Niaga Ambon" 
+      },
+      "correct": "C", "expl": "Malaka adalah pelabuhan dagang terbesar yang menghubungkan jalur pelayaran India dan Nusantara."
+    },
+    {
+      "cat": "kedatangan", "concept": "Keliling Dunia", "text": "t_kedatangan",
+      "q": "Pelaut Spanyol yang armadanya berhasil membuktikan bahwa bumi berbentuk bulat dengan mengelilingi dunia adalah....",
+      "opts": { 
+        "A": "Christopher Columbus", 
+        "B": "Vasco da Gama", 
+        "C": "Amerigo Vespucci", 
+        "D": "Ferdinand Magelhaens", 
+        "E": "Bartolomeu Dias" 
+      },
+      "correct": "D", "expl": "Ekspedisi Magelhaens (dilanjutkan Del Cano) adalah armada pertama yang berlayar mengelilingi bola bumi."
+    },
+    {
+      "cat": "kedatangan", "concept": "Misi Gospel", "text": "t_kedatangan",
+      "q": "Tujuan bangsa Eropa datang ke Nusantara tidak hanya berdagang, tetapi juga membawa misi Gospel yang berarti....",
+      "opts": { 
+        "A": "Membangun sistem pendidikan modern", 
+        "B": "Menyebarkan ajaran agama Kristen", 
+        "C": "Mencari tambang emas dan perak", 
+        "D": "Mencapai kejayaan militer maritim", 
+        "E": "Menaklukkan raja-raja pribumi" 
+      },
+      "correct": "B", "expl": "Gospel merujuk pada misi suci keagamaan untuk menyebarkan ajaran Nasrani ke seluruh dunia."
+    },
+    {
+      "cat": "kedatangan", "concept": "Komoditas Nusantara", "text": "t_kedatangan",
+      "q": "Komoditas utama Nusantara yang paling dicari oleh para pedagang Eropa pada abad ke-16 adalah....",
+      "opts": { 
+        "A": "Kopi dan teh", 
+        "B": "Emas dan perak", 
+        "C": "Cengkih dan pala", 
+        "D": "Karet dan tebu", 
+        "E": "Beras dan gandum" 
+      },
+      "correct": "C", "expl": "Maluku merupakan satu-satunya daerah penghasil utama rempah-rempah mahal seperti cengkih dan pala."
+    },
+    {
+      "cat": "kedatangan", "concept": "Teori Heliosentris", "text": "t_kedatangan",
+      "q": "Faktor pendorong penjelajahan samudra berupa teori heliosentris pertama kali dicetuskan oleh....",
+      "opts": { 
+        "A": "Galileo Galilei", 
+        "B": "Nicolaus Copernicus", 
+        "C": "Isaac Newton", 
+        "D": "Johannes Kepler", 
+        "E": "Claudius Ptolemeus" 
+      },
+      "correct": "B", "expl": "Copernicus mencetuskan bahwa matahari adalah pusat tata surya, yang mendorong pemahaman bentuk bumi bulat."
+    },
+    {
+      "cat": "kedatangan", "concept": "Kedatangan Belanda", "text": "t_kedatangan",
+      "q": "Rombongan kapal dagang Belanda pertama kali tiba di Banten pada tahun 1596 di bawah pimpinan....",
+      "opts": { 
+        "A": "Pieter Both", 
+        "B": "Jan Pieterszoon Coen", 
+        "C": "Jacob van Neck", 
+        "D": "Johan van Oldenbarnevelt", 
+        "E": "Cornelis de Houtman" 
+      },
+      "correct": "E", "expl": "Ekspedisi de Houtman membuka jalur laut pertama bagi bangsa Belanda menuju wilayah Nusantara."
+    },
+    {
+      "cat": "kedatangan", "concept": "Julukan Maluku", "text": "t_kedatangan",
+      "q": "Kepulauan Maluku sering dijuluki oleh para pelaut dan pedagang bangsa Eropa dengan sebutan....",
+      "opts": { 
+        "A": "The Golden Islands", 
+        "B": "The Emerald Equator", 
+        "C": "The Exotic Islands", 
+        "D": "The Treasure Islands", 
+        "E": "The Spice Islands" 
+      },
+      "correct": "A", "expl": "Julukan Kepulauan Rempah (The Spice Islands) diberikan karena melimpahnya hasil rempah di wilayah tersebut."
+    },
+    {
+      "cat": "kedatangan", "concept": "Perjanjian Saragosa", "text": "t_kedatangan",
+      "q": "Perjanjian yang menyudahi konflik perebutan wilayah Maluku antara Spanyol dan Portugis adalah....",
+      "opts": { 
+        "A": "Traktat London", 
+        "B": "Perjanjian Bongaya", 
+        "C": "Kapitulasi Tuntang", 
+        "D": "Perjanjian Saragosa", 
+        "E": "Perjanjian Tordesillas" 
+      },
+      "correct": "D", "expl": "Perjanjian Saragosa menetapkan Spanyol harus meninggalkan Maluku dan memusatkan kekuatannya di Filipina."
+    },
+    {
+      "cat": "kolonialisme", "concept": "Tujuan VOC", "text": "t_kolonial",
+      "q": "Alasan utama dibentuknya serikat dagang VOC oleh pemerintah Belanda pada tahun 1602 adalah....",
+      "opts": { 
+        "A": "Membangun pangkalan militer yang kuat di wilayah Asia", 
+        "B": "Menyebarkan kebudayaan Belanda di wilayah Nusantara", 
+        "C": "Membantu biaya perang kemerdekaan Amerika Serikat", 
+        "D": "Menghindari persaingan tidak sehat antarpedagang Belanda", 
+        "E": "Menyatukan seluruh kekuatan pedagang asal Eropa" 
+      },
+      "correct": "D", "expl": "VOC dibentuk untuk menyatukan pedagang Belanda agar harga rempah tidak anjlok akibat persaingan internal."
+    },
+    {
+      "cat": "kolonialisme", "concept": "Hak Oktroi", "text": "t_kolonial",
+      "q": "Pemerintah Belanda memberikan kewenangan luar biasa kepada VOC untuk bertindak seperti negara, yang disebut....",
+      "opts": { 
+        "A": "Hak Oktroi", 
+        "B": "Hak Ekstirpasi", 
+        "C": "Hak Veto", 
+        "D": "Preanger Stelsel", 
+        "E": "Cultuurstelsel" 
+      },
+      "correct": "A", "expl": "Hak Oktroi memberi VOC kekuasaan istimewa seperti mencetak uang, memiliki tentara, dan membuat perjanjian."
+    },
+    {
+      "cat": "kolonialisme", "concept": "Isi Hak Oktroi", "text": "t_kolonial",
+      "q": "Berikut ini yang termasuk salah satu wewenang istimewa VOC di wilayah Nusantara adalah....",
+      "opts": { 
+        "A": "Membangun sekolah untuk kaum pribumi", 
+        "B": "Mencetak dan mengedarkan uang sendiri", 
+        "C": "Menerapkan sistem pertanian modern", 
+        "D": "Memilih raja-raja pribumi secara langsung", 
+        "E": "Membebaskan rakyat dari kewajiban pajak" 
+      },
+      "correct": "B", "expl": "Mencetak mata uang sendiri adalah bukti tingginya kedaulatan ekonomi VOC di wilayah jajahannya."
+    },
+    {
+      "cat": "kolonialisme", "concept": "Ekstirpasi", "text": "t_kolonial",
+      "q": "Tindakan VOC memusnahkan tanaman rempah-rempah yang berlebih agar harganya tetap tinggi disebut....",
+      "opts": { 
+        "A": "Pelayaran Hongi", 
+        "B": "Verplichte Leverantie", 
+        "C": "Ekstirpasi", 
+        "D": "Contingenten", 
+        "E": "Devide et Impera" 
+      },
+      "correct": "C", "expl": "Ekstirpasi dilakukan untuk menjaga keseimbangan pasokan agar harga rempah di Eropa tidak jatuh."
+    },
+    {
+      "cat": "kolonialisme", "concept": "Strategi Politik VOC", "text": "t_kolonial",
+      "q": "Strategi VOC yang memanfaatkan konflik perebutan takhta antarkeluarga kerajaan di Nusantara dikenal dengan istilah....",
+      "opts": { 
+        "A": "Etische Politiek", 
+        "B": "Benteng Stelsel", 
+        "C": "Preanger Stelsel", 
+        "D": "Open Door Policy", 
+        "E": "Devide et Impera" 
+      },
+      "correct": "E", "expl": "Devide et impera (politik adu domba) digunakan VOC untuk melemahkan kerajaan dari dalam."
+    },
+    {
+      "cat": "kolonialisme", "concept": "Pengawasan VOC", "text": "t_kolonial",
+      "q": "Patroli laut bersenjata yang dilakukan armada VOC untuk mengawasi monopoli dagang di Maluku disebut....",
+      "opts": { 
+        "A": "Ekspedisi Pamalayu", 
+        "B": "Contingenten", 
+        "C": "Verplichte Leverantie", 
+        "D": "Ekstirpasi", 
+        "E": "Pelayaran Hongi" 
+      },
+      "correct": "E", "expl": "Pelayaran Hongi menggunakan perahu kora-kora untuk menghukum pedagang gelap yang melanggar monopoli."
+    },
+    {
+      "cat": "kolonialisme", "concept": "Pajak Hasil Bumi", "text": "t_kolonial",
+      "q": "Kewajiban menyerahkan pajak berupa hasil bumi kepada VOC oleh wilayah yang tidak dikuasai secara langsung disebut....",
+      "opts": { 
+        "A": "Ekstirpasi", 
+        "B": "Pelayaran Hongi", 
+        "C": "Contingenten", 
+        "D": "Preanger Stelsel", 
+        "E": "Verplichte Leverantie" 
+      },
+      "correct": "C", "expl": "Contingenten adalah wujud pajak wajib hasil panen yang harus disetorkan penguasa lokal kepada VOC."
+    },
+    {
+      "cat": "kolonialisme", "concept": "Runtuhnya VOC", "text": "t_kolonial",
+      "q": "Faktor internal yang menjadi penyebab utama kebangkrutan dan dibubarkannya VOC pada akhir tahun 1799 adalah....",
+      "opts": { 
+        "A": "Kejatuhan harga rempah-rempah di Eropa", 
+        "B": "Berkurangnya pasokan rempah dari Nusantara", 
+        "C": "Persaingan bisnis dengan kongsi dagang Inggris", 
+        "D": "Tindakan korupsi yang dilakukan oleh para pegawainya", 
+        "E": "Serangan armada militer dari negara Spanyol" 
+      },
+      "correct": "D", "expl": "Perilaku korup dan gaya hidup mewah pegawai VOC menguras habis kas keuangan kongsi dagang tersebut."
+    },
+    {
+      "cat": "kolonialisme", "concept": "Herman W. Daendels", "text": "t_kolonial",
+      "q": "Gubernur Jenderal yang memerintahkan pembangunan Jalan Raya Pos (Anyer-Panarukan) sepanjang 1.000 km adalah....",
+      "opts": { 
+        "A": "Jan Pieterszoon Coen", 
+        "B": "Herman Willem Daendels", 
+        "C": "Johannes van den Bosch", 
+        "D": "Thomas Stamford Raffles", 
+        "E": "Pieter Both" 
+      },
+      "correct": "B", "expl": "Daendels menggunakan sistem kerja rodi paksa untuk menyelesaikan jalan tersebut demi keperluan militer."
+    },
+    {
+      "cat": "kolonialisme", "concept": "Tugas Utama Daendels", "text": "t_kolonial",
+      "q": "Fokus utama kebijakan Daendels selama memerintah di Hindia Belanda (1808-1811) adalah....",
+      "opts": { 
+        "A": "Membangun pertahanan militer untuk menahan serangan Inggris", 
+        "B": "Menghapuskan sistem feodalisme keraton di tanah Jawa", 
+        "C": "Membangun fasilitas sekolah bagi masyarakat pribumi", 
+        "D": "Menerapkan sistem pemerintahan liberal yang demokratis", 
+        "E": "Mengembangkan ilmu pengetahuan dan kebudayaan lokal" 
+      },
+      "correct": "A", "expl": "Daendels diutus khusus oleh Prancis-Belanda untuk menjaga Pulau Jawa agar tidak jatuh ke tangan militer Inggris."
+    },
+    {
+      "cat": "kolonialisme", "concept": "Kapitulasi Tuntang", "text": "t_kolonial",
+      "q": "Peralihan kekuasaan secara resmi dari pemerintahan Belanda-Prancis kepada militer Inggris pada tahun 1811 ditandai dengan....",
+      "opts": { 
+        "A": "Traktat London", 
+        "B": "Kapitulasi Tuntang", 
+        "C": "Traktat Sumatra", 
+        "D": "Perjanjian Salatiga", 
+        "E": "Perjanjian Bongaya" 
+      },
+      "correct": "B", "expl": "Melalui Kapitulasi Tuntang, Gubernur Jenderal Janssen menyerahkan seluruh wilayah Hindia Belanda kepada Inggris."
+    },
+    {
+      "cat": "kolonialisme", "concept": "Sistem Ekonomi Raffles", "text": "t_kolonial",
+      "q": "Kebijakan ekonomi utama yang diterapkan oleh Gubernur Jenderal Thomas Stamford Raffles di Nusantara bertumpu pada sistem....",
+      "opts": { 
+        "A": "Sewa Tanah (Landrent)", 
+        "B": "Cultuurstelsel", 
+        "C": "Ekstirpasi", 
+        "D": "Preanger Stelsel", 
+        "E": "Politik Pintu Terbuka" 
+      },
+      "correct": "A", "expl": "Sewa Tanah berlandaskan anggapan bahwa semua lahan adalah milik negara, dan petani harus membayar sewa."
+    },
+    {
+      "cat": "kolonialisme", "concept": "Kegagalan Sewa Tanah", "text": "t_kolonial",
+      "q": "Salah satu penyebab utama gagalnya penerapan sistem sewa tanah pada masa pemerintahan Raffles adalah....",
+      "opts": { 
+        "A": "Kurangnya jumlah petugas pengawas pemungut pajak", 
+        "B": "Tingginya angka pemberontakan di pedalaman Jawa", 
+        "C": "Masyarakat pedesaan belum terbiasa menggunakan uang", 
+        "D": "Ditolak keras oleh pemerintah pusat di Inggris", 
+        "E": "Harga tanah sewaan dinilai terlalu murah bagi petani" 
+      },
+      "correct": "C", "expl": "Perekonomian pedesaan masih bersifat subsisten dan mengandalkan sistem barter hasil bumi, bukan uang tunai."
+    },
+    {
+      "cat": "kolonialisme", "concept": "Karya Raffles", "text": "t_kolonial",
+      "q": "Buku bersejarah mengenai alam dan kebudayaan Jawa yang ditulis pada masa pemerintahan Thomas Stamford Raffles adalah....",
+      "opts": { 
+        "A": "Max Havelaar", 
+        "B": "Suiker Wet", 
+        "C": "Als Ik Een Nederlander Was", 
+        "D": "Oetoesan Hindia", 
+        "E": "The History of Java" 
+      },
+      "correct": "E", "expl": "Buku ini merangkum observasi mendalam Raffles mengenai sejarah, sosial, dan geografi Pulau Jawa."
+    },
+    {
+      "cat": "kolonialisme", "concept": "Pencetus Tanam Paksa", "text": "t_kolonial",
+      "q": "Kebijakan Tanam Paksa (Cultuurstelsel) mulai diwajibkan kepada rakyat Indonesia pada tahun 1830 oleh Gubernur Jenderal....",
+      "opts": { 
+        "A": "Herman Willem Daendels", 
+        "B": "Thomas Stamford Raffles", 
+        "C": "Pieter Both", 
+        "D": "Johannes van den Bosch", 
+        "E": "Jan Pieterszoon Coen" 
+      },
+      "correct": "D", "expl": "Van den Bosch merancang sistem eksploitasi lahan ini untuk segera menutupi kebangkrutan kas negara Belanda."
+    },
+    {
+      "cat": "kolonialisme", "concept": "Tujuan Tanam Paksa", "text": "t_kolonial",
+      "q": "Tujuan utama pemerintah kolonial Belanda memberlakukan sistem Tanam Paksa di Indonesia adalah untuk....",
+      "opts": { 
+        "A": "Mengenalkan bibit tanaman unggul kepada petani", 
+        "B": "Membiayai pembangunan sekolah dan rumah sakit", 
+        "C": "Mengisi kekosongan kas keuangan negara Belanda", 
+        "D": "Membuka banyak lapangan pekerjaan bagi warga lokal", 
+        "E": "Meningkatkan kemampuan industri sektor pertanian" 
+      },
+      "correct": "C", "expl": "Belanda terlilit utang luar biasa pasca Perang Jawa dan Perang Kemerdekaan Belgia."
+    },
+    {
+      "cat": "kolonialisme", "concept": "Aturan Lahan Tanam Paksa", "text": "t_kolonial",
+      "q": "Menurut peraturan tertulis Cultuurstelsel, besaran lahan pertanian warga yang wajib ditanami komoditas ekspor adalah....",
+      "opts": { 
+        "A": "Sepertiga bagian lahan", 
+        "B": "Seperempat bagian lahan", 
+        "C": "Seperdua bagian lahan", 
+        "D": "Seluruh hamparan lahan", 
+        "E": "Seperlima bagian lahan" 
+      },
+      "correct": "E", "expl": "Meskipun aturannya hanya membatasi seperlima area, dalam praktiknya Belanda sering merampas lebih dari itu."
+    },
+    {
+      "cat": "kolonialisme", "concept": "Penyimpangan Tanam Paksa", "text": "t_kolonial",
+      "q": "Pelaksanaan Tanam Paksa sangat menyengsarakan rakyat karena banyak terjadi penyimpangan. Contoh penyimpangan tersebut adalah....",
+      "opts": { 
+        "A": "Lahan yang digunakan untuk tanaman paksa tetap dikenakan pajak", 
+        "B": "Waktu penanaman terbukti lebih cepat dari aturan tertulis", 
+        "C": "Petani berhak menentukan pilihan varietas bibit yang ditanam", 
+        "D": "Kelebihan hasil panen selalu dikembalikan kepada pihak petani", 
+        "E": "Kerugian akibat musibah gagal panen ditanggung pemerintah" 
+      },
+      "correct": "A", "expl": "Petani dipaksa bekerja menanam komoditas Belanda tanpa upah, namun lahan mereka tetap ditagih pajak."
+    },
+    {
+      "cat": "kolonialisme", "concept": "Cultuurprocenten", "text": "t_kolonial",
+      "q": "Insentif atau bonus yang diberikan Belanda kepada pejabat lokal yang berhasil menyetor hasil panen melampaui target disebut....",
+      "opts": { 
+        "A": "Contingenten", 
+        "B": "Ekstirpasi", 
+        "C": "Landrent System", 
+        "D": "Cultuurprocenten", 
+        "E": "Preanger Stelsel" 
+      },
+      "correct": "D", "expl": "Sistem bonus ini membuat bupati menjadi sangat serakah dan memeras tenaga rakyat demi keuntungan pribadi."
+    },
+    {
+      "cat": "kolonialisme", "concept": "Dampak Positif", "text": "t_kolonial",
+      "q": "Meskipun menimbulkan banyak penderitaan, dampak positif tidak langsung dari sistem Tanam Paksa bagi petani Nusantara adalah....",
+      "opts": { 
+        "A": "Terbebasnya petani dari sistem kerja wajib dan rodi", 
+        "B": "Petani mulai mengenal berbagai jenis tanaman komoditas ekspor", 
+        "C": "Meningkatnya taraf hidup dan pendapatan petani secara umum", 
+        "D": "Terbangunnya fasilitas jaringan irigasi berskala besar", 
+        "E": "Terhapusnya tatanan sistem feodal kelas sosial di pedesaan" 
+      },
+      "correct": "B", "expl": "Petani menjadi terampil membudidayakan kopi, teh, tebu, dan nila yang sebelumnya tidak dikenal luas."
+    },
+    {
+      "cat": "kolonialisme", "concept": "Max Havelaar", "text": "t_kolonial",
+      "q": "Buku novel yang mengkritik keras penderitaan rakyat akibat sistem Tanam Paksa dan birokrasi korup ditulis oleh....",
+      "opts": { 
+        "A": "Eduard Douwes Dekker", 
+        "B": "Conrad van Deventer", 
+        "C": "Fransen van de Putte", 
+        "D": "Baron van Höevell", 
+        "E": "Johannes van den Bosch" 
+      },
+      "correct": "A", "expl": "Menggunakan nama pena Multatuli, Douwes Dekker membongkar penderitaan rakyat Lebak dalam novel Max Havelaar."
+    },
+    {
+      "cat": "kolonialisme", "concept": "Sistem Pengganti", "text": "t_kolonial",
+      "q": "Setelah Tanam Paksa dihapuskan, sistem ekonomi yang memberikan kebebasan bagi investor asing untuk membuka usaha di Hindia Belanda disebut....",
+      "opts": { 
+        "A": "Politik Balas Budi", 
+        "B": "Ekonomi Terpimpin", 
+        "C": "Nasionalisasi Aset", 
+        "D": "Politik Pintu Terbuka", 
+        "E": "Sistem Ekonomi Benteng" 
+      },
+      "correct": "D", "expl": "Politik Pintu Terbuka (Liberal) mengundang masuknya investasi dan perusahaan swasta ke Nusantara."
+    },
+    {
+      "cat": "kolonialisme", "concept": "UU Agraria 1870", "text": "t_kolonial",
+      "q": "Undang-Undang yang dikeluarkan pada tahun 1870 untuk melindungi tanah milik penduduk agar tidak dijual kepada pengusaha asing adalah....",
+      "opts": { 
+        "A": "Suiker Wet", 
+        "B": "Agrarische Wet", 
+        "C": "Koelie Ordonnantie", 
+        "D": "Poenale Sanctie", 
+        "E": "Landrent Wet" 
+      },
+      "correct": "B", "expl": "UU Agraria mengizinkan pengusaha swasta menyewa tanah dalam waktu lama, tanpa mengubah status hak miliknya."
+    },
+    {
+      "cat": "kolonialisme", "concept": "Ciri Pintu Terbuka", "text": "t_kolonial",
+      "q": "Ciri khas paling utama dari pelaksanaan Politik Pintu Terbuka di wilayah Hindia Belanda adalah....",
+      "opts": { 
+        "A": "Penguasaan jalur pelayaran sepenuhnya oleh satu perusahaan negara", 
+        "B": "Kewajiban seluruh petani menyetorkan panen pangannya", 
+        "C": "Masuknya penanaman modal usaha oleh perusahaan swasta asing", 
+        "D": "Pembatasan masuknya tenaga kerja ahli dari kawasan Eropa", 
+        "E": "Pengambilalihan status kepemilikan tanah warga pedesaan" 
+      },
+      "correct": "C", "expl": "Perusahaan asing mulai membuka perkebunan tebu, teh, dan tembakau dalam skala industri besar."
+    },
+    {
+      "cat": "kolonialisme", "concept": "Koelie Ordonnantie", "text": "t_kolonial",
+      "q": "Aturan hukum yang dikeluarkan pemerintah kolonial untuk mengikat kuat para pekerja kontrak di perkebunan Sumatera Timur disebut....",
+      "opts": { 
+        "A": "Cultuurprocenten", 
+        "B": "Ekstirpasi", 
+        "C": "Suiker Wet", 
+        "D": "Agrarische Wet", 
+        "E": "Koelie Ordonnantie" 
+      },
+      "correct": "E", "expl": "Regulasi ini memastikan tersedianya buruh kasar berupah rendah yang tidak bisa dengan mudah meninggalkan pekerjaannya."
+    },
+    {
+      "cat": "kolonialisme", "concept": "Poenale Sanctie", "text": "t_kolonial",
+      "q": "Sanksi hukuman yang dapat diberikan oleh pengusaha perkebunan kepada pekerja kontrak yang melarikan diri atau menolak bekerja dinamakan....",
+      "opts": { 
+        "A": "Hak Oktroi", 
+        "B": "Hak Ekstirpasi", 
+        "C": "Pelayaran Hongi", 
+        "D": "Poenale Sanctie", 
+        "E": "Cultuurprocenten" 
+      },
+      "correct": "D", "expl": "Aturan kejam ini memberikan kekuasaan bagi mandor perkebunan untuk menghukum buruhnya secara sepihak."
+    },
+    {
+      "cat": "kolonialisme", "concept": "Gubernur Pertama VOC", "text": "t_kolonial",
+      "q": "Pejabat yang ditugaskan sebagai Gubernur Jenderal pertama untuk memimpin operasional VOC di wilayah Nusantara adalah....",
+      "opts": { 
+        "A": "Jan Pieterszoon Coen", 
+        "B": "Pieter Both", 
+        "C": "Antonio van Diemen", 
+        "D": "Cornelis Speelman", 
+        "E": "Johannes van den Bosch" 
+      },
+      "correct": "B", "expl": "Pieter Both menjabat pada tahun 1610 dengan pusat kegiatan awal mula berada di kawasan Ambon."
+    },
+    {
+      "cat": "kolonialisme", "concept": "Perpindahan Pusat VOC", "text": "t_kolonial",
+      "q": "Tokoh Gubernur Jenderal VOC yang memindahkan pusat kedudukannya dari Ambon menuju ke pelabuhan Batavia (Jayakarta) adalah....",
+      "opts": { 
+        "A": "Pieter Both", 
+        "B": "Cornelis de Houtman", 
+        "C": "Herman Willem Daendels", 
+        "D": "Thomas Stamford Raffles", 
+        "E": "Jan Pieterszoon Coen" 
+      },
+      "correct": "E", "expl": "J.P. Coen meruntuhkan wilayah Jayakarta dan membangun markas komando baru bernama Batavia."
+    },
+    {
+      "cat": "kolonialisme", "concept": "Preanger Stelsel", "text": "t_kolonial",
+      "q": "Sistem penyerahan wajib sebelum era Cultuurstelsel yang mengharuskan rakyat di Jawa Barat menanam kopi untuk diserahkan kepada VOC dinamakan....",
+      "opts": { 
+        "A": "Preanger Stelsel", 
+        "B": "Pelayaran Hongi", 
+        "C": "Sistem Landrent", 
+        "D": "Sistem Contingenten", 
+        "E": "Sistem Ekstirpasi" 
+      },
+      "correct": "A", "expl": "Preanger Stelsel (Sistem Priangan) merupakan cikal bakal praktik kerja tanam paksa bagi VOC di Jawa Barat."
+    },
+    {
+      "cat": "kolonialisme", "concept": "Daendels vs Raffles", "text": "t_kolonial",
+      "q": "Perbedaan karakteristik yang paling menonjol antara masa pemerintahan Daendels dan Raffles di Nusantara ditunjukkan oleh....",
+      "opts": { 
+        "A": "Daendels bersikap ramah pada raja lokal, sementara Raffles membatasi peran keraton", 
+        "B": "Daendels memungut uang sewa tunai, sementara Raffles memungut komoditas eksklusif", 
+        "C": "Daendels berfokus pada pertahanan militer, sementara Raffles berfokus pada administrasi sipil", 
+        "D": "Daendels menjunjung prinsip kerakyatan, sementara Raffles menganut paham pemusatan total", 
+        "E": "Daendels memberantas korupsi pejabat, sementara Raffles melegalkan penyuapan" 
+      },
+      "correct": "C", "expl": "Daendels diutus saat suasana peperangan militer, sedangkan Raffles membawa tradisi pemerintahan sipil liberal."
+    },
+    {
+      "cat": "kolonialisme", "concept": "Latar Politik Etis", "text": "t_kolonial",
+      "q": "Seruan mengenai utang kehormatan moral bangsa Belanda terhadap penderitaan rakyat Indonesia menjadi latar belakang lahirnya kebijakan....",
+      "opts": { 
+        "A": "Sistem Sewa Tanah", 
+        "B": "Politik Pintu Terbuka", 
+        "C": "Sistem Tanam Paksa", 
+        "D": "Aturan Kuli Kontrak", 
+        "E": "Politik Etis" 
+      },
+      "correct": "E", "expl": "Politik Balas Budi (Etis) dicetuskan Ratu Wilhelmina akibat kritikan kaum humanis atas eksploitasi kekayaan Hindia Belanda."
+    },
+    {
+      "cat": "kolonialisme", "concept": "Trilogi Etis", "text": "t_kolonial",
+      "q": "Tiga program utama (Trilogi) yang direkomendasikan oleh Van Deventer dalam pelaksanaan Politik Etis terdiri dari....",
+      "opts": { 
+        "A": "Edukasi, Toleransi, dan Irigasi", 
+        "B": "Transmigrasi, Edukasi, dan Demokrasi", 
+        "C": "Irigasi, Edukasi, dan Emigrasi", 
+        "D": "Emigrasi, Industrialisasi, dan Irigasi", 
+        "E": "Irigasi, Eksploitasi, dan Edukasi" 
+      },
+      "correct": "C", "expl": "Ketiga aspek ini dinilai memegang kunci utama pemulihan ekonomi dasar kaum pekerja pedesaan."
+    },
+    {
+      "cat": "kolonialisme", "concept": "Penyimpangan Etis", "text": "t_kolonial",
+      "q": "Pelaksanaan program irigasi dalam Politik Etis sering kali disalahgunakan. Bentuk penyimpangan tersebut ditunjukkan dengan fakta bahwa....",
+      "opts": { 
+        "A": "Penjualan air bersih secara monopoli di daerah perkotaan", 
+        "B": "Ekosistem sungai dirusak demi pembangunan bendungan raksasa", 
+        "C": "Rakyat lokal menolak saluran pengairan baru akibat rasa curiga", 
+        "D": "Air saluran irigasi hanya dialirkan ke lahan perkebunan swasta asing", 
+        "E": "Anggaran perbaikan irigasi dihabiskan untuk kebutuhan operasi militer" 
+      },
+      "correct": "D", "expl": "Infrastruktur bendungan tidak memprioritaskan sawah gurem milik rakyat, tetapi sawah tebu milik perusahaan Belanda."
+    },
+    {
+      "cat": "kolonialisme", "concept": "Tujuan Edukasi Etis", "text": "t_kolonial",
+      "q": "Tujuan awal pemerintah kolonial mendirikan jenjang pendidikan dasar bagi kalangan pribumi sesungguhnya dilatarbelakangi oleh keinginan untuk....",
+      "opts": { 
+        "A": "Mempersiapkan kemerdekaan wilayah jajahan secara bertahap", 
+        "B": "Mendapatkan tenaga administrasi lokal yang bisa dibayar murah", 
+        "C": "Meningkatkan kesadaran politik kaum muda di masyarakat desa", 
+        "D": "Menyebarluaskan nilai keagamaan dan kultur kebarat-baratan", 
+        "E": "Memenuhi target pendidikan dari dewan perwakilan bangsa Eropa" 
+      },
+      "correct": "B", "expl": "Belanda memerlukan juru tulis rendahan dari penduduk lokal yang lebih hemat biaya dibanding mendatangkan ahli dari Eropa."
+    },
+    {
+      "cat": "kolonialisme", "concept": "Dampak Edukasi Etis", "text": "t_kolonial",
+      "q": "Dampak besar di luar dugaan pemerintah Belanda dari penerapan program pendidikan (Edukasi) bagi rakyat pribumi adalah....",
+      "opts": { 
+        "A": "Lahirnya golongan terpelajar yang memelopori pergerakan nasional", 
+        "B": "Mahalnya operasional sekolah sehingga menguras anggaran belanja negara", 
+        "C": "Rakyat pribumi secara serempak memboikot semua jabatan pemerintahan", 
+        "D": "Hilangnya berbagai tradisi kebudayaan asli masyarakat pedalaman Nusantara", 
+        "E": "Meningkatnya laju pemakaian dominan bahasa asing di tengah publik" 
+      },
+      "correct": "A", "expl": "Sekolah menghasilkan kaum intelektual melek politik yang kelak membangun kesadaran persatuan dan kemerdekaan bangsa."
+    },
+    {
+      "cat": "perlawanan", "concept": "Latar Belakang Mataram", "text": "t_perlawanan",
+      "q": "Alasan utama Sultan Agung memimpin pasukan Kesultanan Mataram untuk melancarkan serangan terhadap VOC di Batavia adalah karena....",
+      "opts": { 
+        "A": "Tindakan monopoli VOC sangat merugikan aktivitas perdagangan Mataram", 
+        "B": "Tuntutan sepihak agar seluruh hasil pangan pesisir utara diserahkan ke Batavia", 
+        "C": "Manuver Mataram untuk menjalin kerjasama eksklusif dengan bangsa Portugis", 
+        "D": "Campur tangan Belanda dalam urusan suksesi takhta penerus kerajaan", 
+        "E": "Perampasan bersenjata VOC atas harta peninggalan leluhur keraton" 
+      },
+      "correct": "A", "expl": "VOC menghalangi kapal-kapal Mataram berdagang ke Malaka dan menjadi ancaman cita-cita Sultan menyatukan Jawa."
+    },
+    {
+      "cat": "perlawanan", "concept": "Serangan Mataram 1629", "text": "t_perlawanan",
+      "q": "Penyebab utama kegagalan serangan besar kedua pasukan Mataram ke Batavia pada tahun 1629 adalah karena....",
+      "opts": { 
+        "A": "Kalahnya proporsi jumlah barisan prajurit melawan tentara bayaran VOC", 
+        "B": "Gugurnya Sultan Agung di medan tempur sebelum berhasil menembus benteng", 
+        "C": "Komandan pasukan utara membelot dan bergabung dengan pihak kompeni", 
+        "D": "Kedatangan bantuan besar berupa armada tempur dari kerajaan Inggris", 
+        "E": "VOC berhasil menemukan dan membakar lumbung persediaan pangan Mataram" 
+      },
+      "correct": "E", "expl": "Pembakaran simpul lumbung padi di Tegal dan Cirebon menyebabkan tentara Mataram kehabisan bekal dan kelaparan hebat."
+    },
+    {
+      "cat": "perlawanan", "concept": "Awal Perang Padri", "text": "t_perlawanan",
+      "q": "Pada awalnya, konflik Perang Padri di Sumatra Barat bermula dari perselisihan lokal yang melibatkan dua kelompok, yaitu....",
+      "opts": { 
+        "A": "Kelompok bangsawan ningrat melawan kelompok buruh pertanian", 
+        "B": "Pasukan pemerintah kolonial melawan kekuasaan raja Minangkabau", 
+        "C": "Kaum ulama pembaru ajaran Islam berhadapan dengan kelompok adat", 
+        "D": "Kalangan intelektual muda berselisih dengan para sesepuh masyarakat", 
+        "E": "Sengketa tapal batas wilayah Minangkabau dengan Kesultanan Aceh" 
+      },
+      "correct": "C", "expl": "Kaum Padri menghendaki pemurnian agama, namun hal ini ditentang keras oleh Kaum Adat yang masih mempertahankan kebiasaan lama."
+    },
+    {
+      "cat": "perlawanan", "concept": "Siasat Awal Padri", "text": "t_perlawanan",
+      "q": "Tindakan intervensi awal pihak Belanda saat melihat perpecahan dalam Perang Padri adalah dengan cara....",
+      "opts": { 
+        "A": "Menawarkan bantuan pelatihan militer khusus untuk kubu pertahanan Padri", 
+        "B": "Memberikan dukungan bantuan persenjataan dan militer kepada kelompok adat", 
+        "C": "Membangun aliansi pertahanan wilayah utara bersama panglima lokal", 
+        "D": "Menarik mundur garnisun tentara Eropa keluar dari kawasan pedalaman", 
+        "E": "Mengasingkan pemimpin kaum adat agar wilayah tersebut lebih mudah dikuasai" 
+      },
+      "correct": "B", "expl": "Belanda memanfaatkan situasi dengan menyuplai senjata kepada kubu Adat yang terdesak demi mendapat pijakan politik di sana."
+    },
+    {
+      "cat": "perlawanan", "concept": "Tokoh Padri", "text": "t_perlawanan",
+      "q": "Tokoh utama yang menjadi pemimpin spiritual dan panglima perlawanan gigih Kaum Padri melawan penjajahan Belanda adalah....",
+      "opts": { 
+        "A": "Pangeran Harya Diponegoro", 
+        "B": "Panglima Sultan Hasanuddin", 
+        "C": "Pejuang perempuan Cut Nyak Dien", 
+        "D": "Tuanku Imam Bonjol", 
+        "E": "Pemuka gerilya pesisir Teuku Umar" 
+      },
+      "correct": "D", "expl": "Tuanku Imam Bonjol adalah simbol sentral perlawanan Kaum Padri dari benteng pertahanannya di perbukitan."
+    },
+    {
+      "cat": "perlawanan", "concept": "Gencatan Senjata Padri", "text": "t_perlawanan",
+      "q": "Alasan pemerintah Belanda memaksakan kesepakatan damai sementara dalam Perang Padri pada tahun 1825 adalah....",
+      "opts": { 
+        "A": "Menipisnya cadangan logistik dan amunisi di markas pusat Batavia", 
+        "B": "Belanda harus memusatkan seluruh kekuatan tentaranya untuk menghadapi Perang Diponegoro", 
+        "C": "Munculnya tekanan kuat dari lembaga hak asasi manusia di daratan Eropa", 
+        "D": "Pasukan militer Belanda menderita kekalahan memalukan di pesisir barat", 
+        "E": "Timbulnya rasa simpati para jenderal Belanda atas tuntutan warga setempat" 
+      },
+      "correct": "B", "expl": "Pecahnya Perang Diponegoro di Jawa sangat menguras keuangan dan prajurit, sehingga Belanda tidak bisa berperang di dua front bersamaan."
+    },
+    {
+      "cat": "perlawanan", "concept": "Sebab Khusus Diponegoro", "text": "t_perlawanan",
+      "q": "Peristiwa yang menjadi pemicu langsung (sebab khusus) meletusnya Perang Diponegoro pada tahun 1825 adalah....",
+      "opts": { 
+        "A": "Pemasangan patok proyek pembuatan jalan yang melintasi makam leluhur Pangeran Diponegoro", 
+        "B": "Pemotongan luas batas teritorial warisan keluarga administratif kesultanan lokal", 
+        "C": "Campur tangan berlebihan aparat pemerintah dalam memilih pewaris takhta istana", 
+        "D": "Diberlakukannya aturan penarikan uang sewa lahan yang sangat menyiksa para petani", 
+        "E": "Diadakannya perayaan kebudayaan Barat yang melanggar kesucian tradisi sakral keraton" 
+      },
+      "correct": "A", "expl": "Tindakan provokatif pelecehan makam leluhur di tanah Tegalrejo ini memancing amarah langsung Pangeran beserta para pengikutnya."
+    },
+    {
+      "cat": "perlawanan", "concept": "Sistem Pertahanan Belanda", "text": "t_perlawanan",
+      "q": "Strategi militer yang diterapkan oleh Jenderal De Kock untuk membatasi ruang pergerakan laskar Diponegoro dinamakan taktik....",
+      "opts": { 
+        "A": "Manuver Supit Urang Penjepit", 
+        "B": "Metode Konsentrasi Pemusatan Basis", 
+        "C": "Aksi Ekspedisi Bumi Hangus", 
+        "D": "Sistem Pertahanan Benteng Stelsel", 
+        "E": "Pola Pengepungan Devide et Impera" 
+      },
+      "correct": "D", "expl": "Benteng Stelsel membangun jaringan kubu militer pada setiap wilayah yang berhasil direbut untuk memutus akses pergerakan musuh."
+    },
+    {
+      "cat": "perlawanan", "concept": "Tujuan Benteng Stelsel", "text": "t_perlawanan",
+      "q": "Tujuan utama Belanda membangun banyak jaringan pos pertahanan dalam Perang Diponegoro adalah untuk....",
+      "opts": { 
+        "A": "Menarik simpati agar warga sipil pedesaan bersedia beralih memihak kompeni", 
+        "B": "Menyiapkan zona lumbung logistik dan persembunyian di wilayah terisolir", 
+        "C": "Mengekang laju gerak pasukan gerilya serta memutuskan jalur logistik mereka", 
+        "D": "Menutup pesisir utara guna menangkal datangnya kapal bantuan senjata asing", 
+        "E": "Menyediakan lokasi pengungsian yang aman bagi keluarga warga pendatang Eropa" 
+      },
+      "correct": "C", "expl": "Taktik jaringan benteng membuat ruang jelajah pasukan Diponegoro kian menyempit dan kekurangan suplai pertolongan desa sekitar."
+    },
+    {
+      "cat": "perlawanan", "concept": "Akhir Perang Jawa", "text": "t_perlawanan",
+      "q": "Penyelesaian akhir dari Perang Diponegoro (1830) sangat merugikan pihak pejuang pribumi karena Belanda melakukan tindakan berupa....",
+      "opts": { 
+        "A": "Mengeksekusi mati anggota keluarga pangeran secara terbuka tanpa proses pengadilan", 
+        "B": "Menyebarkan rumor palsu adanya perpecahan antara pewaris takhta darah biru", 
+        "C": "Melakukan penangkapan Pangeran Diponegoro menggunakan tipu muslihat saat perundingan damai", 
+        "D": "Memalsukan dokumen tanda tangan penyerahan hak kedaulatan keraton secara sepihak", 
+        "E": "Mencemari sumber air minum pasukan perlawanan dengan racun saat terjadi pengepungan" 
+      },
+      "correct": "C", "expl": "Jenderal De Kock melanggar janji kehormatan diplomasi dengan menyergap Pangeran pada hari perundingan damai di Magelang."
+    },
+    {
+      "cat": "perlawanan", "concept": "Legitimasi Perang Aceh", "text": "t_perlawanan",
+      "q": "Belanda merasa memiliki alasan sah untuk melancarkan serangan invasi ke wilayah Aceh setelah dikeluarkannya kesepakatan internasional yaitu....",
+      "opts": { 
+        "A": "Piagam Perjanjian Garis Batas Bongaya", 
+        "B": "Peraturan Kesepakatan Lintas London", 
+        "C": "Traktat Sumatra tahun 1871", 
+        "D": "Dokumen Rekonsiliasi Kapitulasi Tuntang", 
+        "E": "Pakta Pertahanan Perbatasan Salatiga" 
+      },
+      "correct": "C", "expl": "Berdasarkan Traktat Sumatra, Inggris menarik perlindungannya atas Aceh sehingga Belanda bebas melancarkan serangan."
+    },
+    {
+      "cat": "perlawanan", "concept": "Peneliti Aceh", "text": "t_perlawanan",
+      "q": "Tokoh ahli keislaman yang diutus pemerintah Belanda untuk menyelidiki karakter sosiologis dan kelemahan masyarakat Aceh adalah....",
+      "opts": { 
+        "A": "Tokoh Pemerhati Tani Baron van Höevell", 
+        "B": "Mantan Pejabat Kritis Eduard Douwes Dekker", 
+        "C": "Penasihat Ekonomi Pertanian Johannes van den Bosch", 
+        "D": "Dr. Snouck Hurgronje", 
+        "E": "Jenderal Penakluk Pertahanan J.B. van Heutsz" 
+      },
+      "correct": "D", "expl": "Snouck menyamar dengan nama Haji Abdul Ghaffar agar diterima meneliti struktur adat dan keagamaan di pedalaman Aceh."
+    },
+    {
+      "cat": "perlawanan", "concept": "Saran Snouck Hurgronje", "text": "t_perlawanan",
+      "q": "Saran strategi yang diberikan oleh Snouck Hurgronje kepada jenderal militer Belanda untuk menaklukkan perlawanan Aceh adalah....",
+      "opts": { 
+        "A": "Melakukan pembakaran sistematis menghancurkan seluruh fasilitas keagamaan", 
+        "B": "Melarang keras segala bentuk aktivitas berkumpul massa santri dan pengajian", 
+        "C": "Menawarkan pembagian wilayah otonomi khusus kepada dewan ulama lokal", 
+        "D": "Menunggu sampai amunisi dan perbekalan makanan warga desa habis sama sekali", 
+        "E": "Menghancurkan kekuatan ulama tanpa ampun dan mendekati golongan bangsawan uleebalang" 
+      },
+      "correct": "E", "expl": "Ia menyimpulkan ulama tidak akan menyerah, sedangkan kaum bangsawan feodal cenderung pragmatis jika dijanjikan kekuasaan."
+    },
+    {
+      "cat": "perlawanan", "concept": "Teuku Umar", "text": "t_perlawanan",
+      "q": "Pejuang Aceh yang terkenal menggunakan taktik berpura-pura menyerah kepada pihak Belanda guna mendapatkan pasokan senjata adalah....",
+      "opts": { 
+        "A": "Teuku Umar", 
+        "B": "Panglima Polim", 
+        "C": "Teuku Cik Ditiro", 
+        "D": "Sultan Mahmud Syah", 
+        "E": "Cut Meutia" 
+      },
+      "correct": "A", "expl": "Taktik Teuku Umar (bergelar Johan Pahlawan) berhasil mengecoh Belanda sebelum akhirnya ia kembali berbalik angkat senjata."
+    },
+    {
+      "cat": "perlawanan", "concept": "Korps Marsose", "text": "t_perlawanan",
+      "q": "Untuk mengimbangi kecepatan gerilya rakyat Aceh di hutan belantara, Belanda membentuk satuan pasukan perintis khusus yang diberi nama....",
+      "opts": { 
+        "A": "Divisi Batalyon Barisan Pengawal", 
+        "B": "Korps Marsose (Marechaussee)", 
+        "C": "Bantuan Unit Legiun Kavaleri", 
+        "D": "Resimen Operasi Darat KNIL", 
+        "E": "Penjaga Pangkalan Garnisun Militer" 
+      },
+      "correct": "B", "expl": "Pasukan Marsose sangat terlatih, tidak membawa logistik berat, dan menggunakan senjata kelewang tajam untuk pertarungan jarak dekat di hutan."
+    },
+    {
+      "cat": "perlawanan", "concept": "Sebab Kegagalan", "text": "t_perlawanan",
+      "q": "Salah satu kelemahan paling dominan yang menyebabkan berbagai perlawanan rakyat di Nusantara selalu berujung pada kekalahan adalah....",
+      "opts": { 
+        "A": "Terputusnya jalur distribusi makanan untuk garis pertahanan belakang", 
+        "B": "Menurunnya simpati masyarakat merespons kerasnya kamp perjuangan", 
+        "C": "Kurangnya kemampuan menyusun formasi barisan pertempuran yang rapi", 
+        "D": "Banyaknya komplotan intelijen pembelot di pihak keluarga pemimpin", 
+        "E": "Persenjataan tradisional yang kalah canggih dan mudah terkena politik adu domba" 
+      },
+      "correct": "E", "expl": "Ketimpangan kualitas bedil melawan tombak/keris, serta efektivitas taktik devide et impera, secara konsisten meruntuhkan pejuang daerah."
+    },
+    {
+      "cat": "perlawanan", "concept": "Karakter Perlawanan", "text": "t_perlawanan",
+      "q": "Corak perjuangan kemerdekaan rakyat Nusantara pada masa sebelum abad ke-20 (sebelum masa Kebangkitan Nasional) selalu memiliki ciri utama berupa....",
+      "opts": { 
+        "A": "Aksi terpusat bertumpu lobi perjanjian diplomasi tingkat internasional", 
+        "B": "Penyatuan ideologi kuat yang dijalankan melalui badan kepengurusan rapi", 
+        "C": "Perjuangan bersifat kedaerahan dan sangat bergantung pada pemimpin karismatik", 
+        "D": "Tujuan konstitusional terprogram menuju pendirian negara republik", 
+        "E": "Langkah perlindungan militer pasif memanfaatkan tawaran aliansi luar negeri" 
+      },
+      "correct": "C", "expl": "Perjuangan sporadis mudah kandas begitu panglima perangnya tertangkap atau gugur karena belum ada kesadaran persatuan senasional."
+    },
+    {
+      "cat": "perlawanan", "concept": "Sultan Haji", "text": "t_perlawanan",
+      "q": "Belanda memuluskan cengkeraman monopoli rempah dengan menghasut Sultan Haji untuk mendongkel takhta ayahnya, Sultan Ageng Tirtayasa, di kerajaan....",
+      "opts": { 
+        "A": "Kesultanan Banten", 
+        "B": "Pelabuhan Makassar", 
+        "C": "Bandar Niaga Mataram", 
+        "D": "Demak Pesisir Utara", 
+        "E": "Pangkalan Laut Cirebon" 
+      },
+      "correct": "A", "expl": "Tragedi perselisihan ayah dan anak ini berakibat fatal bagi kedaulatan Banten yang akhirnya tunduk di bawah kuasa monopoli VOC."
+    },
+    {
+      "cat": "perlawanan", "concept": "Kesamaan Perlawanan", "text": "t_perlawanan",
+      "q": "Kesamaan karakteristik perlawanan fisik rakyat Aceh, pertempuran Pangeran Diponegoro, dan serangan Sultan Agung bersumber pada kenyataan bahwa perlawanan tersebut....",
+      "opts": { 
+        "A": "Didorong oleh tuntutan pembebasan rute pelayaran regional bagi saudagar luar", 
+        "B": "Bertahan kuat karena mendapat sokongan senjata modern dari perompak laut", 
+        "C": "Dimulai serentak akibat pembongkaran konstruksi bangunan jalan perhubungan", 
+        "D": "Bersumber dari kekuatan ketokohan dan kharisma yang dimiliki sang pemimpin utama", 
+        "E": "Berakhir dengan kemenangan gemilang mendepak pengaruh kekuasaan bangsa Barat" 
+      },
+      "correct": "D", "expl": "Setiap gelombang besar peperangan bersandar mutlak pada figur penyatu moril (Raja atau Ulama Besar)."
+    },
+    {
+      "cat": "perlawanan", "concept": "Taktik Baru Abad 20", "text": "t_perlawanan",
+      "q": "Perubahan format dan metode perjuangan bangsa Indonesia mengusir penjajahan pasca bergantinya abad (setelah tahun 1908) bertumpu pada arah pergerakan berupa....",
+      "opts": { 
+        "A": "Kerusuhan massal terencana di wilayah perumahan birokrat kolonial", 
+        "B": "Pergerakan memanfaatkan organisasi modern dan lobi diplomasi media massa", 
+        "C": "Taktik peperangan gerilya terpusat di kawasan perbukitan dataran tinggi", 
+        "D": "Pengajuan proposal perlindungan tentara militer kepada negara blok fasis", 
+        "E": "Pemboikotan ekstrem menutup seluruh pelabuhan dari masuknya barang impor" 
+      },
+      "correct": "B", "expl": "Lahirnya Boedi Oetomo menandai peralihan dari ujung keris/senapan beralih ke wadah perlawanan intelektual sipil (pena dan serikat)."
+    },
+    {
+      "cat": "dampak", "concept": "Birokrasi Kolonial", "text": "t_dampak",
+      "q": "Dampak restrukturisasi sistem administrasi kolonial mengubah secara drastis kedudukan penguasa lokal keraton. Perubahan tersebut adalah....",
+      "opts": { 
+        "A": "Rakyat kelas jelata mendadak leluasa memperoleh fasilitas mendirikan organisasi", 
+        "B": "Raja pribumi diberikan kuasa penuh secara mandiri menyusun undang-undang", 
+        "C": "Model dewan parlemen diberlakukan langsung dalam sistem pemilihan tingkat desa", 
+        "D": "Para bupati dan bangsawan berubah fungsi menjadi sekadar pegawai gajian pemerintah kolonial", 
+        "E": "Keberadaan kompleks istana kerajaan tradisional seluruhnya dibongkar oleh tentara" 
+      },
+      "correct": "D", "expl": "Penguasa lokal kehilangan kemandirian takhta dan beralih fungsi menjadi alat pelaksana birokrasi (pangreh praja) di bawah Residen Eropa."
+    },
+    {
+      "cat": "dampak", "concept": "Ekonomi Moneter", "text": "t_dampak",
+      "q": "Dampak kolonialisme mulai menggerus ekonomi tradisional pedesaan. Masyarakat beralih meninggalkan model barter akibat mulai dikenalkannya sistem....",
+      "opts": { 
+        "A": "Pemberlakuan kesetaraan bagi hasil keuntungan perkebunan dengan pejabat desa", 
+        "B": "Ekonomi uang tunai serta sistem upah buruh harian perkebunan", 
+        "C": "Perniagaan keliling tukar menukar hasil ladang menuju pasar lintas kabupaten", 
+        "D": "Pembentukan sarana pendirian lembaga penyaluran kredit koperasi secara gotong royong", 
+        "E": "Kepemilikan mandiri alat pertanian berat berupa mesin giling oleh kalangan pribumi" 
+      },
+      "correct": "B", "expl": "Proyek Tanam Paksa dan perkebunan swasta memaksa peredaran uang logam masuk untuk membayar pajak dan menyewa tenaga kuli kotor."
+    },
+    {
+      "cat": "dampak", "concept": "Ekologi Lahan", "text": "t_dampak",
+      "q": "Kebijakan eksploitatif era Politik Pintu Terbuka melahirkan ancaman kerusakan ekologi besar-besaran di berbagai pulau akibat pembukaan....",
+      "opts": { 
+        "A": "Larangnya pendirian peternakan yang menyusutkan drastis populasi kerbau pembajak", 
+        "B": "Pencemaran buangan sisa batu bara dari armada tongkang di dermaga pelabuhan", 
+        "C": "Lahan kawasan hutan lebat dalam skala masif untuk dialihkan menjadi perkebunan industri", 
+        "D": "Penyumbatan alur resapan air baku irigasi akibat padatnya permukiman buruh kota", 
+        "E": "Asap buangan limbah udara kotor dari pabrik sentral pelumatan tebu tradisional" 
+      },
+      "correct": "C", "expl": "Ribuan hektar kanopi hutan rimba dibabat habis beralih fungsi menjadi lautan perkebunan karet, kina, dan teh pengusaha kapitalis asing."
+    },
+    {
+      "cat": "dampak", "concept": "Kasta Kulit Putih", "text": "t_dampak",
+      "q": "Struktur penduduk Hindia Belanda menerapkan klasifikasi kelas sosial berbasis rasisme, di mana posisi tertinggi dipegang penuh oleh kelompok yang disebut....",
+      "opts": { 
+        "A": "Kelas pendamping wewenang yang menasihati langsung kekuasaan takhta sang bupati", 
+        "B": "Kelas menengah penghubung perputaran sirkulasi ekonomi niaga pasar di daerah", 
+        "C": "Golongan pegawai bawahan kelurahan pelaksana pemungutan panen ke petani", 
+        "D": "Kelompok tingkat bawah pesuruh lapis kedua pemegang sebatas perlindungan hak properti", 
+        "E": "Golongan orang-orang Eropa kulit putih yang mendapat perlakuan hukum paling istimewa" 
+      },
+      "correct": "E", "expl": "Golongan Europeanen berhak atas kebebasan privilese politik, standar gaji melangit, serta peradilan terbaik anti-pribumi."
+    },
+    {
+      "cat": "dampak", "concept": "Timur Asing", "text": "t_dampak",
+      "q": "Dalam stratifikasi kelas masyarakat kolonial, golongan menengah perantara yang berprofesi sebagai pedagang (Tionghoa, Arab, dan India) digolongkan sebagai ras kependudukan tipe....",
+      "opts": { 
+        "A": "Kelompok Pemukim Pedagang Golongan Timur Asing (Vreemde Oosterlingen)", 
+        "B": "Penduduk Bumiputera Kelompok Inlanders", 
+        "C": "Kasta Golongan Tertinggi Europeanen Murni", 
+        "D": "Barisan Keturunan Para Elite Bangsawan Aristokrat", 
+        "E": "Rakyat Lapisan Masyarakat Jelata Boemipoetera" 
+      },
+      "correct": "A", "expl": "Etnis keturunan Asia di luar pribumi dikotakkan secara hukum sebagai lapis tengah yang menengahi jarak si kulit putih dan kelas terbawah Inlander."
+    },
+    {
+      "cat": "dampak", "concept": "Gaya Indis", "text": "t_dampak",
+      "q": "Perpaduan kebiasaan pendatang Eropa menyesuaikan dengan iklim terik tropis Nusantara melahirkan karya bangunan berventilasi besar dan beranda lebar yang dikenal dengan gaya arsitektur....",
+      "opts": { 
+        "A": "Gaya Barok Katedral Penjajahan Hindia", 
+        "B": "Desain minimalis geometris perpaduan garis kubisme Art Deco", 
+        "C": "Kebudayaan corak bangunan Indis (Indische Empire Style)", 
+        "D": "Ornamen peninggalan kemegahan ukiran gaya Renaissance Jawa", 
+        "E": "Bangunan halaman kastel abad pertengahan julukan Gotik Nusantara" 
+      },
+      "correct": "C", "expl": "Indische Empire merepresentasikan kompromi wujud arsitektur vila-vila pilar putih neoklasik yang dimodifikasi atap tropis menahan hujan keras."
+    },
+    {
+      "cat": "dampak", "concept": "Fungsi Kereta Api", "text": "t_dampak",
+      "q": "Pembangunan jalur rel kereta api awal rute Semarang-Tanggung sengaja difokuskan pemerintah kolonial dalam rangka kebutuhan mendesak berupa....",
+      "opts": { 
+        "A": "Pemindahan persebaran migrasi buruh menuju kantong permukiman kota besar", 
+        "B": "Pengiriman kilat kompi bantuan pasukan pengamanan peredam perang gerilya", 
+        "C": "Peningkatan kunjungan kemudahan pelesir liburan keluarga pejabat pemerintahan", 
+        "D": "Pemastian alur perlindungan pergerakan suplai persediaan makanan lumbung padi", 
+        "E": "Percepatan transportasi hasil komoditas perkebunan menuju dermaga pelabuhan besar" 
+      },
+      "correct": "E", "expl": "Lokomotif lori jauh lebih efektif memangkas biaya ongkos pikul pedati mengangkut jutaan ton karung gula mentah dan kopi dari pedalaman."
+    },
+    {
+      "cat": "dampak", "concept": "Peradilan Daendels", "text": "t_dampak",
+      "q": "Dampak perombakan sistem hukum kehakiman sejak era Gubernur Jenderal Daendels melahirkan ketidakadilan tatanan peradilan dalam hal pembagian vonis di mana....",
+      "opts": { 
+        "A": "Terjadi perlakuan diskriminasi penegakan hukum yang dibedakan tegas berdasarkan asal usul golongan ras penduduk", 
+        "B": "Diberlakukannya aturan paksa undang-undang syariat kuno atas segala pelanggaran pidana perkotaan", 
+        "C": "Pembebasan masa tahanan remisi selalu diperuntukkan bagi kejahatan berat kaum pesakitan orang kulit berwarna", 
+        "D": "Pemberlakuan seragam undang-undang perlindungan sakral petinggi doktrin agama ke seluruh lembaga kepolisian desa", 
+        "E": "Kehilangan jaminan pembelaan hukum memicu pembubaran keseluruhan bentuk proses peradilan meja hijau di tanah koloni" 
+      },
+      "correct": "A", "expl": "Dibuat pemisahan Raad van Justitie untuk bule eropa (hukuman terhormat) berbeda jauh dengan Landraad khusus ras bawah pribumi (mudah dijatuhi sanksi siksa rantai)."
+    },
+    {
+      "cat": "dampak", "concept": "Pendidikan Eksklusif", "text": "t_dampak",
+      "q": "Akses mengenyam jenjang pengajaran sekolah kurikulum model ELS (sekolah dasar berbahasa Belanda) sangatlah terbatas karena syarat pendaftaran murid utamanya mengutamakan anak-anak dari latar belakang kelompok keluarga....",
+      "opts": { 
+        "A": "Pahlawan perang pengawal pertahanan batas kota markas keamanan resimen militer", 
+        "B": "Keluarga bangsawan aristokrat, priyayi tingkat atas, ataupun pejabat birokrasi pemerintahan daerah", 
+        "C": "Perkumpulan pedagang perantara grosir pemasok kebutuhan dagang loak pasar besar", 
+        "D": "Permukiman nelayan pesisir perbatasan relokasi pencari buruh kuli harian proyek pelabuhan", 
+        "E": "Pemilik buruh ladang pencari nafkah kasar harian keluarga petani borongan penggarap kebun" 
+      },
+      "correct": "B", "expl": "Fasilitas bermutu berstandar pengantar bahasa barat dipersembahkan ibarat tiket suap kesetiaan bagi bupati wedana komprador kaki tangan pemerintahan Belanda."
+    },
+    {
+      "cat": "dampak", "concept": "Lahirnya Nasionalisme", "text": "t_dampak",
+      "q": "Penderitaan panjang sejarah penjajahan kolonial tanpa disengaja ikut membidani lahirnya proses integrasi perasaan persatuan seluruh ragam identitas bangsa membentuk cikal bakal wawasan kuat akan wujud ikatan kesatuan....",
+      "opts": { 
+        "A": "Berkembangnya secara luas ideologi radikal kelompok buruh menentang seluruh kebudayaan warisan nilai adat masyarakat tradisional", 
+        "B": "Meningkatnya laju peniruan dan kebanggaan menggunakan bahasa Belanda dalam obrolan keseharian seluruh kaum pedalaman terpelajar", 
+        "C": "Penghapusan otomatis garis sekat pembeda kesenjangan kemiskinan yang merangsang kesejahteraan kelompok elit desa bersatu memajukan lahan", 
+        "D": "Tumbuhnya ingatan masa lalu penderitaan senasib seperjuangan yang menjebol batasan etnis menuju lahirnya embrio ideologi kemerdekaan Nasionalisme", 
+        "E": "Menguatnya kepatuhan kesetiaan luar biasa rakyat jelata lapisan bawah dalam melestarikan budaya sikap sisa feodalisme keraton ksatria" 
+      },
+      "correct": "D", "expl": "Belenggu penjajahan dari penjajah yang sama menempa identitas perasaan tertindas dari Aceh, Pasundan, Bugis, hingga Maluku menjadi bersepakat satu padu bertanah air Indonesia."
+    }
+  ]
+}
+</script>
+
+<script>
+(function(){
+"use strict";
+
+// Posisi jawaban benar yang sudah diatur dengan sangat hati-hati pada array preShuffleKey.
+// Kunci jawaban (1-80) berikut ini merupakan representasi random yang menjamin 
+// distribusi pilihan secara alamiah dan merata (Target ≈ 16 huruf masing-masing).
+const preShuffleKey = [
+  "B", "D", "A", "E", "C", "A", "E", "C", "D", "B",
+  "C", "B", "E", "A", "D", "D", "A", "B", "C", "E",
+  "E", "C", "D", "B", "A", "B", "A", "C", "E", "D",
+  "C", "E", "A", "D", "B", "A", "D", "B", "C", "E",
+  "D", "B", "E", "A", "C", "E", "C", "D", "B", "A",
+  "A", "E", "C", "B", "D", "B", "A", "D", "E", "C",
+  "C", "D", "E", "A", "B", "E", "C", "A", "D", "B",
+  "D", "B", "C", "E", "A", "C", "E", "A", "B", "D"
+];
+
+const DATA = JSON.parse(document.getElementById('quiz-data').textContent);
+const TEXTS = DATA.TEXTS;
+let baseQuestions = DATA.QUESTIONS;
+
+// Apply the mapped key positions onto the actual options data structure
+baseQuestions.forEach((q, idx) => {
+  const targetKey = preShuffleKey[idx];
+  let originalCorrectText = q.opts[q.correct];
+  let distractors = [];
+  
+  // Collect all distractor texts
+  for (let key in q.opts) {
+    if (key !== q.correct) {
+      distractors.push(q.opts[key]);
+    }
+  }
+
+  // Rewrite the options dict to place the correct answer exactly at targetKey
+  let letters = ["A", "B", "C", "D", "E"];
+  let newOpts = {};
+  
+  letters.forEach(letter => {
+    if (letter === targetKey) {
+      newOpts[letter] = originalCorrectText;
+    } else {
+      newOpts[letter] = distractors.pop();
+    }
+  });
+
+  q.opts = newOpts;
+  q.correct = targetKey;
+  q.originalIndex = idx + 1; // Store original question number 1-80 for reference
+});
+
+// We keep the questions in their exact ordered state 
+// so the distribution remains perfectly matched to the hidden Answer Key.
+let QUESTIONS = baseQuestions; 
+const TOTAL = QUESTIONS.length;
+const POINTS_PER_Q = 100 / TOTAL;
+
+// Label Kategori untuk hasil akhir
+const CONCEPT_LABEL = {
+  kedatangan: "Masa Kedatangan Bangsa Eropa",
+  kolonialisme: "Kebijakan Era Kolonialisme",
+  perlawanan: "Perlawanan Kedaerahan",
+  dampak: "Dampak Penjajahan Kolonial"
+};
+
+let state = {
+  screen: 'start', 
+  idx: 0,
+  answers: [], 
+  hintShown: false,
+  explainOpen: false,
+  reviewOpen: false
+};
+
+const app = document.getElementById('app');
+const customModal = document.getElementById('custom-modal');
+const modalMsg = document.getElementById('modal-msg');
+
+function lastText(idx){
+  const q = QUESTIONS[idx];
+  return TEXTS[q.text];
+}
+
+function render(){
+  if(state.screen === 'start') return renderStart();
+  if(state.screen === 'result') return renderResult();
+  return renderQuestion();
+}
+
+function renderStart(){
+  app.innerHTML = `
+    <div class="masthead">
+      <div>
+        <h1>Latihan Soal — Sejarah Indonesia</h1>
+        <p>Kelas XI SMA — Evaluasi Kolonialisme & Pergerakan</p>
+      </div>
+    </div>
+    <div class="card start-hero">
+      <h2>Latsol Sejarah Kelas XI</h2>
+      <p>Mencakup materi kolonialisme eropa serta perlawanan lokal.</p>
+      <div class="chips">
+        <span class="chip">Dampak kolonialisme</span>
+        <span class="chip">Semoga ga pusing ya</span>
+        <span class="chip">Latar belakang penjelajahan samudra</span>
+        <span class="chip">Kolonialisme</span>
+      </div>
+      <p>Pilih jawaban yang benar ya mbak mas, jangan capcipcup, jangan asal mencet yaa, semangat mbak mass <3.</p>
+      <div class="toolbar">
+        <button class="btn btn-primary" id="start-btn">OKE GASSS</button>
+      </div>
+    </div>
+  `;
+  document.getElementById('start-btn').addEventListener('click', ()=>{
+    state.screen = 'question';
+    render();
+  });
+}
+
+function currentAnswerRecord(){
+  return state.answers.find(a=>a.qIndex===state.idx);
+}
+
+function renderQuestion(){
+  const q = QUESTIONS[state.idx];
+  const txt = lastText(state.idx);
+  const answered = currentAnswerRecord();
+  const scoreSoFar = computeScore();
+  const doneCount = state.answers.length;
+  const pct = Math.round((state.idx)/TOTAL*100);
+
+  const letters = ['A','B','C','D','E'];
+
+  let optsHtml = letters.filter(l=>q.opts[l]!==undefined).map(l=>{
+    let cls = 'opt';
+    let disabled = '';
+    if(answered){
+      disabled = 'disabled';
+      if(l === q.correct) cls += ' correct';
+      else if(answered.chosen === l) cls += ' wrong';
+    }
+    return `<button class="${cls}" data-letter="${l}" ${disabled}>
+      <span class="letter">${l}</span>
+      <span>${escapeHtml(q.opts[l])}</span>
+    </button>`;
+  }).join('');
+
+  let hintHtml = '';
+  if(state.hintShown && !answered){
+    hintHtml = `<div class="hint-box">💡 ${escapeHtml(makeHint(q))}</div>`;
+  }
+
+  let feedbackHtml = '';
+  if(answered){
+    const verdictClass = answered.isCorrect ? 'correct' : 'wrong';
+    const verdictText = answered.skipped ? 'DILEWATI' : (answered.isCorrect ? 'BENAR (AKURAT)' : 'KURANG TEPAT');
+    feedbackHtml = `
+      <div class="feedback">
+        <span class="feedback-verdict ${answered.skipped ? '' : verdictClass}">${verdictText}</span>
+        <p><span class="label">Kunci Fakta Historis</span><strong>${answered.correct}.</strong> ${escapeHtml(q.opts[answered.correct])}</p>
+        <p><span class="label">Pembahasan Materi</span>${escapeHtml(q.expl)}</p>
+        ${state.explainOpen ? `<p><span class="label">Kedalaman Analisis</span>${escapeHtml(makeExplainMore(q))}</p>` : ''}
+        ${state.reviewOpen ? `<p><span class="label">Cakupan Topik Rujukan</span>${escapeHtml(makeReview(q))}</p>` : ''}
+        <div class="score-line">Skor Evaluasi: ${fmtScore(scoreSoFar)}/100 &nbsp;·&nbsp; Progress: ${doneCount}/${TOTAL} Soal</div>
+        <div class="next-row">
+          <button class="btn btn-primary" id="next-btn">${state.idx+1 < TOTAL ? 'Berpindah ke Nomor Selanjutnya →' : 'Tampilkan Analisis Diagnosis Akhir →'}</button>
+        </div>
+      </div>
+    `;
+  }
+
+  let toolbarHtml = '';
+  if(!answered){
+    toolbarHtml = `
+      <div class="toolbar">
+        <button class="btn" id="hint-btn">Gunakan Hint (Bantuan)</button>
+        <button class="btn" id="skip-btn">Lewati Soal (Skip)</button>
+        <button class="btn" id="score-btn" style="margin-left:auto; border-color:var(--accent); color:var(--accent-dark);">Cek Perolehan Skor</button>
+      </div>
+    `;
+  } else {
+    toolbarHtml = `
+      <div class="toolbar">
+        <button class="btn" id="explain-btn">${state.explainOpen ? 'Tutup Analisis' : 'Perdalam Konsep'}</button>
+        <button class="btn" id="review-btn">${state.reviewOpen ? 'Tutup Rujukan' : 'Cakupan Topik Rujukan'}</button>
+        <button class="btn" id="score-btn" style="margin-left:auto; border-color:var(--accent); color:var(--accent-dark);">Cek Perolehan Skor</button>
+      </div>
+    `;
+  }
+
+  app.innerHTML = `
+    <div class="masthead">
+      <div>
+        <h1>Latihan Soal — Sejarah Indonesia</h1>
+        <p>Kelas XI SMA — Evaluasi Kolonialisme & Pergerakan</p>
+      </div>
+      <div class="progress-box">
+        <div>Soal <strong>${state.idx+1}</strong> / ${TOTAL}</div>
+        <div>Total: ${fmtScore(scoreSoFar)} pt</div>
+      </div>
+    </div>
+    <div class="progress-track"><div class="progress-fill" style="width:${pct}%"></div></div>
+    
+    <div class="card">
+      <div class="text-slate">
+        <h3>${escapeHtml(txt.title)}</h3>
+        <pre>${escapeHtml(txt.body)}</pre>
+      </div>
+      <div class="q-meta">MATA KAJIAN: ${CONCEPT_LABEL[q.cat].toUpperCase()}</div>
+      <p class="q-text">${escapeHtml(q.q)}</p>
+      <div class="options">${optsHtml}</div>
+      ${hintHtml}
+      ${toolbarHtml}
+      ${feedbackHtml}
+    </div>
+  `;
+
+  if(!answered){
+    app.querySelectorAll('.opt').forEach(btn=>{
+      btn.addEventListener('click', ()=>{
+        submitAnswer(btn.getAttribute('data-letter'), false);
+      });
+    });
+    const hintBtn = document.getElementById('hint-btn');
+    if(hintBtn) hintBtn.addEventListener('click', ()=>{ state.hintShown = true; render(); });
+    const skipBtn = document.getElementById('skip-btn');
+    if(skipBtn) skipBtn.addEventListener('click', ()=>{ submitAnswer(null, true); });
+  } else {
+    const nextBtn = document.getElementById('next-btn');
+    if(nextBtn) nextBtn.addEventListener('click', goNext);
+    const explainBtn = document.getElementById('explain-btn');
+    if(explainBtn) explainBtn.addEventListener('click', ()=>{ state.explainOpen = !state.explainOpen; render(); });
+    const reviewBtn = document.getElementById('review-btn');
+    if(reviewBtn) reviewBtn.addEventListener('click', ()=>{ state.reviewOpen = !state.reviewOpen; render(); });
+  }
+  
+  const scoreBtn = document.getElementById('score-btn');
+  if(scoreBtn){
+    scoreBtn.addEventListener('click', ()=>{
+      modalMsg.innerHTML = `Raihan skor penilaian sementara: <strong style="color:var(--accent-dark); font-size:1.15rem;">${fmtScore(scoreSoFar)}/100</strong><br><br>Soal diselesaikan: ${doneCount} dari total ${TOTAL} butir soal.`;
+      customModal.style.display = 'flex';
+    });
+  }
+}
+
+function submitAnswer(letter, skipped){
+  const q = QUESTIONS[state.idx];
+  const isCorrect = !skipped && letter === q.correct;
+  state.answers.push({
+    qIndex: state.idx,
+    chosen: letter,
+    correct: q.correct,
+    isCorrect: isCorrect,
+    skipped: skipped
+  });
+  state.hintShown = false;
+  render();
+}
+
+function goNext(){
+  state.explainOpen = false;
+  state.reviewOpen = false;
+  state.hintShown = false;
+  if(state.idx + 1 < TOTAL){
+    state.idx += 1;
+    window.scrollTo(0,0);
+    render();
+  } else {
+    state.screen = 'result';
+    window.scrollTo(0,0);
+    render();
+  }
+}
+
+function computeScore(){
+  let correctCount = state.answers.filter(a=>a.isCorrect).length;
+  return correctCount * POINTS_PER_Q;
+}
+function fmtScore(n){
+  return (Math.round(n*10)/10).toString();
+}
+
+function makeHint(q){
+  const hints = {
+    kedatangan: "Jangan sampai terkecoh dengan istilah-istilah tujuan kedatangan (3G) dan nama-nama dari penjelajah samudra tersebut.",
+    kolonialisme: "Perhatikan corak pemerintahan yang dibahas (Otoriter Daendels, Sistem Pajak Raffles, maupun monopoli perdagangan VOC).",
+    perlawanan: "Analisis dengan fokus pada cara Belanda menjatuhkan pertahanan perlawanan rakyat setempat, seperti membangun kubu perlindungan maupun adu domba kelompok lokal.",
+    dampak: "Kaitkan kondisi aturan politik penjajahan kolonial (rasialisme dan perburuhan) dengan kehidupan keseharian rakyat pada masa penderitaan tersebut."
+  };
+  return hints[q.cat] || "Bacalah kembali pilihan opsi secara perlahan dengan memastikan konteks era periode sejarah tersebut terpenuhi.";
+}
+
+function makeExplainMore(q){
+  const more = {
+    kedatangan: "Kolonisasi yang digerakkan oleh revolusi keilmuan dan kebutuhan logistik perdagangan memaksa blok Eropa saling bersaing melintasi luasnya samudra menembus Nusantara.",
+    kolonialisme: "Meskipun label kebijakan yang berlaku acapkali terus berubah, seluruh nafas peraturan senantiasa berfungsi untuk mendongkrak pemasukan besar kas perbendaharaan Belanda.",
+    perlawanan: "Semangat tinggi pertarungan angkat senjata masyarakat adat terbukti sering kali melemah parah secepat komandan laskar andalannya tertipu dan diciduk oleh siasat diplomasi perundingan lawan.",
+    dampak: "Kebijakan perbudakan sistem kuli perlahan mendorong perubahan besar kehidupan subsisten menjadi sistem ekonomi upah modern; selain itu belenggu rasial secara mengejutkan membidani kelahiran cita-cita pergerakan nasional."
+  };
+  return more[q.cat] || "";
+}
+
+function makeReview(q){
+  const review = {
+    kedatangan: "Review buku sejarah peminatan pada materi: 'Jatuhnya Konstantinopel, Semboyan Navigasi Pelopor Eropa, dan Perjanjian Tordesillas-Saragosa'.",
+    kolonialisme: "Review pendalaman materi pada tabel: 'Era Administrasi Ekstirpasi, Sewa Tanah Inggris, Sistem Tanam Paksa, hingga Undang-Undang Agraria 1870'.",
+    perlawanan: "Ulangi materi pada bagian ringkasan khusus: 'Kronologi Terbunuhnya Pahlawan Daerah (Perang Diponegoro, Padri, Serangan VOC) serta Keterlibatan Orientalis Snouck Hurgronje'.",
+    dampak: "Silakan buka rujukan tabel ringkasan Bab: 'Dampak Sosiologi Demografi, Kebudayaan Indis, serta Hukum Kependudukan Etnis Asing Kolonial'."
+  };
+  return review[q.cat] || "";
+}
+
+function escapeHtml(str){
+  if(str===undefined || str===null) return '';
+  return String(str).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+function renderResult(){
+  const correctCount = state.answers.filter(a=>a.isCorrect).length;
+  const wrongAnswers = state.answers.filter(a=>!a.isCorrect);
+  const wrongCount = wrongAnswers.length;
+  const finalScore = correctCount * POINTS_PER_Q;
+  const pct = Math.round((correctCount/TOTAL)*100);
+
+  const catStats = {kedatangan:{total:0,wrong:0,concepts:{}}, kolonialisme:{total:0,wrong:0,concepts:{}}, perlawanan:{total:0,wrong:0,concepts:{}}, dampak:{total:0,wrong:0,concepts:{}}};
+  
+  QUESTIONS.forEach((q)=>{
+    catStats[q.cat].total++;
+  });
+  
+  wrongAnswers.forEach(a=>{
+    const q = QUESTIONS[a.qIndex];
+    catStats[q.cat].wrong++;
+    catStats[q.cat].concepts[q.concept] = (catStats[q.cat].concepts[q.concept]||0)+1;
+  });
+
+  let wrongListHtml = '';
+  if(wrongCount === 0){
+    wrongListHtml = `<p class="eval-empty" style="text-align:center; padding: 20px;">Sangat luar biasa! Semua pemahaman materi terserap dengan utuh. Tidak ditemukan satupun kekeliruan analisis historis pada saat proses latihan pengerjaan.</p>`;
+  } else {
+    wrongListHtml = `<div class="wrong-list">` + wrongAnswers.map(a=>{
+      const q = QUESTIONS[a.qIndex];
+      return `
+        <div class="wrong-item">
+          <div class="wi-head">PEMBAHASAN NOMOR SOAL KE-${q.originalIndex} ${a.skipped ? '(Nomor Sengaja Dilewati)' : ''} &nbsp;|&nbsp; Unit Topik: ${CONCEPT_LABEL[q.cat]} <br/> Keputusan Opsi: ${a.skipped ? '-' : a.chosen} &nbsp;·&nbsp; Kunci Jawaban Valid: <strong>${a.correct}</strong></div>
+          <p style="color:var(--ink); font-weight:500;">${escapeHtml(q.q)}</p>
+          <p style="margin-top:10px;"><em>📝 <strong>Fakta Historis:</strong></em> ${escapeHtml(q.expl)}</p>
+        </div>
+      `;
+    }).join('') + `</div>`;
+  }
+
+  function evalBlockFor(catKey){
+    const s = catStats[catKey];
+    if(s.total === 0) return '';
+    const conceptEntries = Object.entries(s.concepts).sort((a,b)=>b[1]-a[1]);
+    let body;
+    if(s.wrong === 0){
+      body = `<p class="eval-empty">Status Solid: Kriteria penguasaan analisis rentetan alur peristiwa sudah mencapai tingkat memuaskan.</p>`;
+    } else {
+      body = `<ul>` + conceptEntries.map(([concept,count])=>{
+        return `<li>Diagnosis kelalaian rincian pemahaman fakta pada titik subtopik pembahasan: <strong>${escapeHtml(concept)}</strong> — (Meleset sebanyak ${count} kali)</li>`;
+      }).join('') + `</ul>`;
+    }
+    return `
+      <div class="eval-block">
+        <h4>${CONCEPT_LABEL[catKey]} <span style="float:right; color:var(--ink-soft); font-weight:400; font-size:0.85rem;">(Ketepatan Skor: ${s.total - s.wrong}/${s.total})</span></h4>
+        ${body}
+      </div>
+    `;
+  }
+
+  app.innerHTML = `
+    <div class="masthead">
+      <div>
+        <h1>Lembar Rekam Diagnosis Evaluasi</h1>
+        <p>Ringkasan Tingkat Pemahaman Latihan Fakta Sejarah Indonesia Kelas XI</p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="result-grid">
+        <div class="result-stat"><span class="num" style="color:var(--accent-dark);">${fmtScore(finalScore)}</span><span class="lbl">Skor Kognitif Evaluasi</span></div>
+        <div class="result-stat"><span class="num">${correctCount} / ${TOTAL}</span><span class="lbl">Total Ketepatan Butir Soal</span></div>
+        <div class="result-stat"><span class="num">${pct}%</span><span class="lbl">Tingkat Indeks Akurasi Latihan</span></div>
+      </div>
+      <p style="color:var(--ink-soft);font-size:0.92rem;text-align:center;">Analisis kalkulasi mendeteksi kelalaian pengerjaan pada ${wrongCount} nomor dari penyelesaian penuh seluruh instrumen ${TOTAL} soal.</p>
+    </div>
+
+    <div class="card">
+      <h2 style="font-family:'Source Serif 4',serif;font-size:1.2rem;margin-top:0;">Penjabaran Evaluasi Sub-Topik Sejarah</h2>
+      <p style="font-size:0.9rem; color:var(--ink-soft); margin-top:-5px; margin-bottom:15px;">List indikator pencatatan berikut memetakan segmen titik rawan kelengahan pemahaman materi yang sangat dianjurkan dipelajari secara merata demi menyongsong agenda tes penilaian nyata PAS/PTS ke depan.</p>
+      ${evalBlockFor('kedatangan')}
+      ${evalBlockFor('kolonialisme')}
+      ${evalBlockFor('perlawanan')}
+      ${evalBlockFor('dampak')}
+    </div>
+
+    <div class="card">
+      <h2 style="font-family:'Source Serif 4',serif;font-size:1.2rem;margin-top:0;">Kumpulan Daftar Peninjauan Soal Rumpang</h2>
+      <p style="font-size:0.9rem; color:var(--ink-soft); margin-top:-5px; margin-bottom:15px;">Lakukan proses perenungan mengenai pemahaman argumentasi pemilihan opsi berikut untuk memperkecil kembali besaran presentase salah pilih berulang di waktu agenda pengerjaan aslinya.</p>
+      ${wrongListHtml}
+    </div>
+
+    <div class="toolbar" style="justify-content:center; margin-bottom: 30px;">
+      <button class="btn btn-primary" id="restart-btn" style="padding:14px 28px; font-size:1.05rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">Coba Ulangi Set Pengerjaan Latihan Evaluasi Harian</button>
+    </div>
+  `;
+
+  document.getElementById('restart-btn').addEventListener('click', ()=>{
+    state = {screen:'start', idx:0, answers:[], hintShown:false, explainOpen:false, reviewOpen:false};
+    window.scrollTo(0,0);
+    render();
+  });
+}
+
+// Inisialisasi awal UI
+render();
+})();
+</script>
+
+<!-- 
+===========================================================================
+KUNCI JAWABAN (FIXED SHUFFLE 1 - 80)
+===========================================================================
+Berikut adalah susunan daftar rujukan kunci jawaban sesuai urutan kemunculan soal di layar aplikasi. 
+(Distribusi A-E didesain berdistribusi sempurna, 16 item untuk masing-masing opsi):
+
+ 1: B
+ 2: D
+ 3: A
+ 4: E
+ 5: C
+ 6: A
+ 7: E
+ 8: C
+ 9: D
+10: B
+11: C
+12: B
+13: E
+14: A
+15: D
+16: D
+17: A
+18: B
+19: C
+20: E
+21: E
+22: C
+23: D
+24: B
+25: A
+26: B
+27: A
+28: C
+29: E
+30: D
+31: C
+32: E
+33: A
+34: D
+35: B
+36: A
+37: D
+38: B
+39: C
+40: E
+41: D
+42: B
+43: E
+44: A
+45: C
+46: E
+47: C
+48: D
+49: B
+50: A
+51: A
+52: E
+53: C
+54: B
+55: D
+56: B
+57: A
+58: D
+59: E
+60: C
+61: C
+62: D
+63: E
+64: A
+65: B
+66: E
+67: C
+68: A
+69: D
+70: B
+71: D
+72: B
+73: C
+74: E
+75: A
+76: C
+77: E
+78: A
+79: B
+80: D
+===========================================================================
+-->
+</body>
+</html>
